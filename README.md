@@ -1,9 +1,11 @@
-# WiiliamFerraz.com
+<p align="center">
+  <img width=400 src="https://i.ibb.co/MC2Gpr1/WFerraz-logo-Tranparency.png" alt="WFerraz-logo-Tranparency" border="0">
+</p>
 
-This is a full-functioal CMS website for William Ferraz being used as a portfolio for his photography.
+<h3 align="center">wiiliamferraz.com</h3>
 
-## Author
-**Lucas Barbosa** - *Initial work* - [lucasbrsa](https://github.com/lucasbrsa)
+<hr>
+<p align="center">
+  This is a full-functional CMS website for William Ferraz being used as a portfolio for his photography.
+</p>
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
