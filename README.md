@@ -6,6 +6,6 @@
 
 <hr>
 <p align="center">
-  This is a full-functional CMS website for William Ferraz being used as a portfolio for his photography.
+  This is a full-functional CMS website built for William Ferraz, being used as a portfolio for his photography.
 </p>
 
