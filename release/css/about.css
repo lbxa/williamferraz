@@ -1,0 +1,20 @@
+/* -------------------------------------------------------
+ About Page Stylesheet
+==========================================================
+Contains all styles for about page.
+------------------------------------------------------- */
+[class*="about-profile-img"] {
+    display: block;
+    width: 300px; height: 300px;
+    margin: auto;
+}
+
+[class*="about-img"] {
+    width: 100%;
+    display: block;
+}
+
+[class*="about-profile-title"] {
+    display: block;
+    margin: auto;
+}

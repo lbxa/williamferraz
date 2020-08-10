@@ -1,0 +1,145 @@
+/* -------------------------------------------------------
+Contact Page Stylesheet
+==========================================================
+Contains all styles website for the contact page
+------------------------------------------------------- */
+[class*="contact-info"] > .pg-title,
+[class*="contact-info"] > p {
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+}
+
+/* contact-form styles -> contact page */
+.form-group {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+[class*="contact-form-input"] {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #757575;
+    font-weight: 300 !important;
+}
+
+textarea.contact-form-input {
+    resize: none !important;
+    height: 150px;
+}
+
+[class*="contact-form-input"]:focus {
+    outline: none;
+    /* blend with background */
+    border-bottom: 1px solid #fff;
+}
+
+/* LABEL ======================================= */
+[class*="contact-form-label"] {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px; top: 10px;
+    font-weight: 200 !important;
+    -webkit-transition: 0.25s ease all;
+    -ms-transition: 0.25s ease all;
+    -moz-transition: 0.25s ease all;
+    -o-transition: 0.25s ease all;
+    transition: 0.25s ease all;
+}
+
+/* active state */
+.contact-form-input:focus ~ .contact-form-label,
+textarea.contact-form-input:focus ~ .contact-form-label,
+input.contact-form-input:valid ~ .contact-form-label,
+textarea.contact-form-input:valid ~ .contact-form-label {
+    top: -20px;
+    font-size: 14px;
+    font-style: oblique;
+    /* old navy color: #5264AE; */
+    color: var(--primary-theme-colour);
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.bar:before, .bar:after {
+    content: '';
+    width: 0; height: 2px;
+    bottom: 1px;
+    position: absolute;
+    background: var(--primary-theme-colour);
+    -webkit-transition: 0.25s ease all;
+    -ms-transition: 0.25s ease all;
+    -moz-transition: 0.25s ease all;
+    -o-transition: 0.25s ease all;
+    transition: 0.25s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+.contact-form-input:focus ~.bar:before, .contact-form-input:focus ~ .bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Custom ANIMATIONS ================ */
+/* active state */
+.contact-form-input:focus ~ .highlight {
+    -webkit-animation: input_highlighter 0.25s ease;
+    -moz-animation: input_highlighter 0.25s ease;
+    -ms-animation: input_highlighter 0.25s ease;
+    -o-animation: input_highlighter 0.25s ease;
+    animation: input_highlighter 0.25s ease;
+}
+
+/* custom keyframes */
+@-webkit-keyframes input_highlighter {
+	from { background: var(--primary-theme-colour); }
+    to   { width: 0; background: transparent; }
+}
+
+@-moz-keyframes input_highlighter {
+	from { background: var(--primary-theme-colour); }
+    to   { width: 0; background: transparent; }
+}
+
+@-ms-keyframes input_highlighter {
+	from { background: var(--primary-theme-colour); }
+    to 	 { width: 0; background: transparent; }
+}
+
+@-o-keyframes input_highlighter {
+	from { background: var(--primary-theme-colour); }
+    to 	 { width: 0; background: transparent; }
+}
+
+@keyframes input_highlighter {
+	from { background: var(--primary-theme-colour); }
+    to 	 { width: 0; background: transparent; }
+}

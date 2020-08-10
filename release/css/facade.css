@@ -1,0 +1,242 @@
+/* -------------------------------------------------------
+Facade Stylesheet
+==========================================================
+Contains all styles for website interface components.
+------------------------------------------------------- */
+
+/*
+----------------------------
+             Carousel Images
+----------------------------
+*/
+[class*="carousel-container"] {
+    width: auto; height: 100%;
+}
+
+#carousel {
+    display: block;
+    margin: 0 auto;
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+[class*="img-carousel-display"] {
+    object-fit: cover;
+    min-height: 100%;
+}
+
+[class*="img-carousel-control-btn"] {
+    display: inline-block !important;
+    width: 35px !important; height: 7px !important;
+    border-radius: 0 !important;
+}
+
+/*
+----------------------------
+                 Image Cards
+----------------------------
+*/
+[class*="img-card"] {
+    margin-bottom: 30px;
+    border-radius: 0 !important;
+    position: relative;
+}
+
+[class*="img-card"] > img {
+    border-radius: 0 !important;
+}
+
+[class*="img-card"]:hover [class*="card-body"] {
+    display: block !important;
+    opacity: 1;
+}
+
+[class*="card-body"] {
+    position: absolute;
+    width: 100%; height: 100%;
+    left: 0; top: 0; right: 0; bottom: 0;
+    opacity: 0;
+    color: #fff;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* transitions */
+    -moz-transition: all 0.33s ease-in-out 0s;
+    -webkit-transition: all 0.33s ease-in-out 0s;
+    -ms-transition: all 0.33s ease-in-out 0s;
+    -o-transition: all 0.33s ease-in-out 0s;
+    transition: all 0.33s ease-in-out 0s;
+}
+
+[class*="card-text"] {
+    position: absolute;
+    padding: 20px;
+    color: #fff;
+    left: 0; bottom: 0;
+    text-align: left;
+}
+
+/*
+----------------------------
+               Ripple Effect
+----------------------------
+*/
+[class*="ripple-box"] {
+    width: auto;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    -webkit-transition: all ease 0.33s;
+    -moz-transition: all ease 0.33s;
+    -ms-transition: all ease 0.33s;
+    -o-transition: all ease 0.33s;
+    transition: all ease 0.33s;
+}
+
+[class*="btn-ripple"] {
+    background-color: rgba(53,58, 63, 1);
+    border: none;
+    user-select: none;
+    min-width: 120px;
+    position: relative;
+    color: #fff;
+    border-radius: 0;
+    border: 1px solid rgba(53,58, 63, 1);
+    /* transitions */
+    -webkit-transition: all ease 0.33s;
+    -moz-transition: all ease 0.33s;
+    -ms-transition: all ease 0.33s;
+    -o-transition: all ease 0.33s;
+    transition: all ease 0.33s;
+}
+
+[class*="ripple-box"]:hover {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12),
+                0 5px 5px -3px rgba(0, 0, 0, 0.4);
+}
+
+/* for anchor links */
+[class*="ripple-box"] > a {
+    color: #fff !important;
+}
+
+[class*="btn-ripple-lg"] {
+    background-color: rgba(53,58, 63, 1);
+    padding: 10px 20px;
+    width: auto;
+    border-radius: 0;
+    position: relative;
+    font-size: 22px;
+    border: 1px solid rgba(53,58, 63, 1);
+    color: #fff;
+    /* transitions */
+    -webkit-transition: all ease 0.33s;
+    -moz-transition: all ease 0.33s;
+    -ms-transition: all ease 0.33s;
+    -o-transition: all ease 0.33s;
+    transition: all ease 0.33s;
+}
+
+[class*="btn-ripple"]:hover,
+[class*="btn-ripple"]:active,
+[class*="btn-ripple"]:focus {
+    outline: none !important;
+    /* background-color: inherit; */
+    /* border: 1px solid rgba(53,58, 63, 1); */
+    /* color: rgba(53,58, 63, 1) !important; */
+}
+/*
+-------------------------------------
+.ink styles - the elements which will create the ripple effect.
+The size and position of these elements will be set by the JS code.
+Initially these elements will be scaled down to 0% and later animated
+to large fading circles on user click.
+-------------------------------------
+*/
+.ink {
+  display: block;
+  position: absolute;
+  /* darker shade from the one below
+  background-color: rgba(53,58, 63, 1); */
+  background-color: #fff;
+  border-radius: 100%;
+  z-index: 500;
+  -webkit-transform: scale(0);
+  -moz-transform   : scale(0);
+  -ms-transform    : scale(0);
+  -o-transform     : scale(0);
+  transform        : scale(0);
+}
+
+/*animation effect*/
+.ink.animate {
+  -webkit-animation: ripple 0.4s linear;
+  -moz-animation   : ripple 0.4s linear;
+  -ms-animation    : ripple 0.4s linear;
+  -o-animation     : ripple 0.4s linear;
+  animation        : ripple 0.4s linear;
+}
+
+-webkit-@keyframes ripple {
+	/*scale the element to 250% to safely cover the entire link and fade it out*/
+	100% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        -moz-transform   : scale(2.5);
+        -ms-transform    : scale(2.5);
+        -o-transform     : scale(2.5);
+        transform        : scale(2.5);
+    }
+}
+
+-moz-@keyframes ripple {
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        -moz-transform   : scale(2.5);
+        -ms-transform    : scale(2.5);
+        -o-transform     : scale(2.5);
+        transform        : scale(2.5);
+    }
+}
+
+-ms-@keyframes ripple {
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        -moz-transform   : scale(2.5);
+        -ms-transform    : scale(2.5);
+        -o-transform     : scale(2.5);
+        transform        : scale(2.5);
+    }
+}
+
+-o-@keyframes ripple {
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        -moz-transform   : scale(2.5);
+        -ms-transform    : scale(2.5);
+        -o-transform     : scale(2.5);
+        transform        : scale(2.5);
+    }
+}
+
+@keyframes ripple {
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        -moz-transform   : scale(2.5);
+        -ms-transform    : scale(2.5);
+        -o-transform     : scale(2.5);
+        transform        : scale(2.5);
+    }
+}

@@ -1,0 +1,145 @@
+/* -------------------------------------------------------
+Stylesheet specifc for index.php
+==========================================================
+Due to the personalised carousel this page will have unique
+styles which all fit under the <body class="index"></body>
+parent container.
+------------------------------------------------------- */
+
+/*
+----------------------------
+                Index Header
+----------------------------
+*/
+body.index > .header-wrapper {
+    display: block;
+    width: 100%; height: 120px;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 100;
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.35);
+    -webkit-transition: 0.33s all ease;
+    -moz-transition: 0.25s all ease;
+    -ms-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+}
+
+body.index > .header-wrapper:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+                0 5px 15px 0 rgba(0,0,0,0.08);
+}
+
+body.index > header {
+    display: block;
+    width: 100%; height: 70px;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    border-bottom: 1px solid #000;
+    background-color: inherit;
+    z-index: 70;
+}
+
+body.index [class*="header-li"] {
+    margin: auto;
+}
+
+body.index [class*="header-logo-img"] {
+    margin: auto;
+    width: auto; height: 70px;
+    display: block;
+}
+
+/*
+----------------------------
+                   Index Nav
+----------------------------
+*/
+body.index nav {
+    display: block;
+    margin: auto;
+    width: 100%; height: auto;
+    line-height: auto;
+    position: absolute;
+    top: 80px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
+body.index [class*="nav-ul"] {
+    width: 40%; height: 40px;
+    line-height: 40px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+body.index [class*="nav-li"] {
+    margin: 0 auto; padding: 0;
+    width: 100%; height: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+body.index [class*="nav-li"] > a {
+    margin: auto; padding: auto;
+    width: auto; height: auto;
+    display: block;
+    /* transitions */
+    -webkit-transition: all ease 0.33s;
+    -moz-transition: all ease 0.33s;
+    -ms-transition: all ease 0.33s;
+    -o-transition: all ease 0.33s;
+    transition: all ease 0.33s;
+}
+
+body.index [class*="nav-li"] > a:hover {
+    background-color: rgba(0,0,0,0.12);
+    color: rgba(0, 0, 0, 1);
+}
+
+/* dropdown menu --> match index header hover color*/
+body.index .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+                0 5px 15px 0 rgba(0,0,0,0.08);
+}
+
+body.index .nav-dropdown:hover  .nav-dropdown-item {
+    background-color: rgba(0,0,0,0.12);
+    color: rgba(0, 0, 0, 1);
+}
+
+/*
+----------------------------
+                Index Footer
+----------------------------
+*/
+body.index > footer {
+    position: absolute;
+    margin: 20px; padding: 0 10px;
+    width: auto; height: auto;
+    line-height: 30px;
+    left: 0; bottom: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.35);
+    border: none;
+    -webkit-transition: 0.33s all ease;
+    -moz-transition: 0.25s all ease;
+    -ms-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+}
+
+body.index > footer:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+                0 5px 15px 0 rgba(0,0,0,0.08);
+}

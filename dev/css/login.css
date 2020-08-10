@@ -1,0 +1,85 @@
+/* -------------------------------------------------------
+Login Stylesheet
+==========================================================
+Contains all styles for website interface components on
+the login page. Styles are unique to page.
+------------------------------------------------------- */
+
+body.login {
+    display: flex;
+    height: 100vh; width: 100vw;
+}
+
+[class*="login-background-col"] {
+    width: 20%; height: 100vh;
+    background-image: url('../img/misc/login_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+[class*="login-body"] {
+    width: 80%; height: 100vh;
+    display: flex;
+}
+
+[class*="login-card"] {
+    width: 400px;
+    margin: auto;
+    margin-left: 20px;
+}
+
+[class*="login-img"] {
+    width: 90px;
+    margin-bottom: 30px;
+}
+
+/* New color choice specific for login page -> built on top of contact.css*/
+/* LABEL ======================================= */
+/* active state */
+.login-form-input:focus ~ .login-form-label,
+textarea.login-form-input:focus ~ .login-form-label,
+input.login-form-input:valid ~ .login-form-label,
+textarea.login-form-input:valid ~ .login-form-label {
+    color: var(--secondary-theme-colour);
+}
+
+/* BOTTOM BARS ================================= */
+body.login .bar:before, body.login .bar:after {
+    background: var(--secondary-theme-colour);
+}
+
+/* Custom ANIMATIONS ================ */
+/* active state */
+.login-form-input:focus ~ .highlight {
+    -webkit-animation: input_highlighter2 0.25s ease;
+    -moz-animation: input_highlighter2 0.25s ease;
+    -ms-animation: input_highlighter2 0.25s ease;
+    -o-animation: input_highlighter2 0.25s ease;
+    animation: input_highlighter2 0.25s ease;
+}
+/* custom keyframes */
+@-webkit-keyframes input_highlighter2 {
+	from { background: var(--secondary-theme-colour); }
+    to   { width: 0; background: transparent; }
+}
+
+@-moz-keyframes input_highlighter2 {
+	from { background: var(--secondary-theme-colour); }
+    to   { width: 0; background: transparent; }
+}
+
+@-ms-keyframes input_highlighter2 {
+	from { background: var(--secondary-theme-colour); }
+    to 	 { width: 0; background: transparent; }
+}
+
+@-o-keyframes input_highlighter2 {
+	from { background: var(--secondary-theme-colour); }
+    to 	 { width: 0; background: transparent; }
+}
+
+@keyframes input_highlighter2 {
+	from { background: var(--secondary-theme-colour); }
+    to 	 { width: 0; background: transparent; }
+}

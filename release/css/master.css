@@ -1,0 +1,214 @@
+/* -------------------------------------------------------
+Master Stylesheet
+==========================================================
+Contains styles for main components of website:
+- html, header, body, nav, footer
+------------------------------------------------------- */
+
+/*
+----------------------------
+               Preset Styles
+----------------------------
+*/
+:root {
+    /* ocre: rgba(166, 162, 159, 1) */
+    /* navy: rgba(11, 31, 60, 1) */
+    /* turquoise: #40E0D0 */
+    --primary-theme-colour: #40E0D0;
+    --secondary-theme-colour: rgba(11, 31, 60, 1);
+}
+
+html {
+    min-width: 1000px !important;   /* whilst non mobile responsibe */
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    font-family: 'Raleway', sans-serif;
+    color: #000;
+    user-select: none !important;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+/* calculates dimensions for footer to remain at the bottom of the page */
+[class*="master-wrapper"] {
+    margin: 0; padding: 0;
+    width: 100% !important; min-height: calc(100vh - 60px) !important;
+}
+
+/* currently only for about and contact section */
+[class*="content-wrapper"] {
+    display: block;
+    margin: 0 10%;
+}
+
+[class*="pg-title"] {
+    font-weight: 200;
+}
+
+[class*="-ul"] {
+    margin: auto; padding: 0;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+a {
+    text-decoration: none !important;
+    /* prevent users selecting by text */
+    user-select: none !important;
+    color: inherit;
+}
+
+/* box shadows */
+.shadow {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+}
+
+.shadow-md {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12),
+                0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
+.shadow-lg {
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+                0 5px 15px 0 rgba(0,0,0,0.08);
+}
+
+/*
+----------------------------
+                      Header
+----------------------------
+*/
+[class*="header-wrapper"] {
+    background-color: var(--primary-theme-colour);
+    /* Other options --
+    background-color: #ccc;
+    background-color: #5264AE;
+    background-color: rgba(53,58, 63, 1); */
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+                0 5px 15px 0 rgba(0,0,0,0.08);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%; height: 80px;
+    border-bottom: 1px solid #000;
+}
+
+[class*="header-li"] {
+    margin: auto;
+}
+
+[class*="header-logo-img"] {
+    margin: auto;
+    width: auto; height: 70px;
+    display: block;
+}
+
+/*
+----------------------------
+                         Nav
+----------------------------
+*/
+nav {
+    display: block;
+    margin: auto;
+    width: 100%; height: 40px;
+    line-height: 40px;
+    z-index: 100;
+}
+
+[class*="nav-ul"] {
+    width: 40%; height: auto;
+    line-height: auto;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+[class*="nav-li"] {
+    margin: 0 auto; padding: 0;
+    width: 100%; height: 100%;
+    text-align: center;
+    overflow: hidden;
+    /* required for ripple effect to work */
+    position: relative;
+}
+
+[class*="nav-li"] > a {
+    margin: auto; padding: auto;
+    width: auto; height: auto;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    /* transitions */
+    -webkit-transition: all ease 0.33s;
+    -moz-transition: all ease 0.33s;
+    -ms-transition: all ease 0.33s;
+    -o-transition: all ease 0.33s;
+    transition: all ease 0.33s;
+}
+
+[class*="nav-li"] > a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 0, 0, 1);
+}
+
+/* dropdown menu */
+.nav-dropdown {
+    margin: 0 auto; padding: 0;
+    width: 100%; height: 100%;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-theme-colour);
+    opacity: 0.9;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+                0 5px 15px 0 rgba(0,0,0,0.08);
+}
+
+.nav-dropdown:hover .nav-dropdown-content {
+    display: block;
+}
+
+.nav-dropdown:hover  .nav-dropdown-item {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 0, 0, 1);
+}
+
+/*
+----------------------------
+                      Footer
+----------------------------
+*/
+footer {
+    width: 80%; height: 40px;
+    line-height: 40px;
+    margin: 0 auto; padding: 0;
+    border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+[class*="footer-li"] {
+    margin: auto;
+    font-size: 12px;
+}

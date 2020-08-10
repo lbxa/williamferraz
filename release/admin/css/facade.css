@@ -1,0 +1,213 @@
+/* -------------------------------------------------------
+Admin/Facade Stylesheet
+==========================================================
+Contains all styles for website interface components on
+the admin pages. Styles are unique to page.
+------------------------------------------------------- */
+
+/* Global Variables */
+:root {
+      /* Tile Dimensions */
+      --flix-slider-tile-spacing: 10px;
+      --flix-slider-tile-width:   250px;
+      --flix-slider-tile-height:  calc(var(--flix-slider-tile-width) / (16 / 9));
+      --flix-slider-tile-menu-height: 40px;
+
+      /* Growth Factor */
+      --flix-slider-growth-factor: 1.5;
+
+      /* Fade to Opacity */
+      --flix-slider-fade-opacity:   0.25;
+      --flix-slider-normal-opacity: 1;
+
+      /* Automatic Offsets - DO NOT ALTER */
+      --flix-slider-offset-left:  calc(-1 * (var(--flix-slider-tile-width) * (var(--flix-slider-growth-factor) - 1) / 2));
+      --flix-slider-offset-right: calc(var(--flix-slider-tile-width) * (var(--flix-slider-growth-factor) - 1));
+
+      /* Transition Speeds */
+      --flix-slider-transition-1: 1s;
+      --flix-slider-transition-2: 0.5s;
+      --flix-slider-transition-3: 0.3s;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+/*
+----------------------------
+                 Flix Slider
+----------------------------
+*/
+
+/* flix-slider Container */
+.flix-slider {
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.flix-slider-title {
+    margin-left: calc((var(--flix-slider-tile-width) * (var(--flix-slider-growth-factor) - 1)) / 2);
+}
+
+/* flix-slider Row */
+.flix-slider-row {
+    white-space: nowrap;
+    margin-top: calc((var(--flix-slider-tile-height) * (var(--flix-slider-growth-factor) - 1)) / 2);
+    margin-bottom: calc((var(--flix-slider-tile-height) * (var(--flix-slider-growth-factor) - 1)) / 2);
+    margin-left: calc((var(--flix-slider-tile-width) * (var(--flix-slider-growth-factor) - 1)) / 2);
+    margin-right: calc((var(--flix-slider-tile-width) * (var(--flix-slider-growth-factor) - 1)) / 2);
+    transition: var(--flix-slider-transition-2);
+}
+
+/* Content Tile */
+.flix-slider-tile {
+    position: relative;
+    display: inline-block;
+    width: var(--flix-slider-tile-width);
+    height: var(--flix-slider-tile-height);
+    margin-right: var(--flix-slider-tile-spacing);
+    transition: var(--flix-slider-transition-2);
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+    cursor: pointer;
+    cursor: hand;
+    background-color: #ccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.flix-slider-tile-menu {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: var(--flix-slider-tile-menu-height);
+    line-height: var(--flix-slider-tile-menu-height);
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #fff !important;
+    opacity: 0;
+    /* transition */
+    -moz-transition: all 0.33s ease-in-out 0s;
+    -webkit-transition: all 0.33s ease-in-out 0s;
+    -ms-transition: all 0.33s ease-in-out 0s;
+    -o-transition: all 0.33s ease-in-out 0s;
+    transition: all 0.33s ease-in-out 0s;
+}
+
+/* Add Extra Margin to Last flix-slider Tile */
+.flix-slider-tile:last-of-type {
+    margin-right: calc(var(--flix-slider-tile-width)/2);
+}
+
+/* Ensure All Elements Inside Tile are Block */
+.flix-slider-tile * {
+    display: block;
+}
+
+/* flix-slider Row on Hover */
+.flix-slider-row:hover {
+    -webkit-transform: translate3d(var(--flix-slider-offset-left), 0, 0);
+    transform: translate3d(var(--flix-slider-offset-left), 0, 0);
+}
+
+/* Content Tile on flix-slider Row Hover */
+.flix-slider-row:hover .flix-slider-tile {
+    opacity: var(--flix-slider-fade-opacity);
+}
+
+/* Content Tile on Hover on flix-slider Row Hover */
+.flix-slider-row:hover .flix-slider-tile:hover {
+    -webkit-transform: scale(var(--flix-slider-growth-factor));
+    transform: scale(var(--flix-slider-growth-factor));
+    opacity: var(--flix-slider-normal-opacity);
+}
+
+.flix-slider-row:hover .flix-slider-tile:hover .flix-slider-tile-menu {
+    display: block !important;
+    opacity: 1;
+}
+
+/* Content Tile on Hover */
+.flix-slider-tile:hover ~ .flix-slider-tile {
+    -webkit-transform: translate3d(var(--flix-slider-offset-right), 0, 0);
+    transform: translate3d(var(--flix-slider-offset-right), 0, 0);
+}
+
+.flix-slider-tile-menu-ul {
+    margin: 0 auto;
+    width: 50%; height: var(--flix-slider-tile-menu-height);
+    line-height: var(--flix-slider-tile-menu-height);
+    display: flex;
+    /* background-color: red; */
+    justify-content: space-around;
+}
+
+.flix-slider-tile-menu-li > a {
+    margin: auto;
+    display: flex;
+    width: auto; height: 100%;
+    /* background-color: green; */
+    -webkit-transition: all ease 0.22s;
+    -moz-transition: all ease 0.22s;
+    -ms-transition: all ease 0.22s;
+    -o-transition: all ease 0.22s;
+    transition: all ease 0.22s;
+}
+
+.flix-slider-tile-menu-li > a:hover {
+    color: #fff;
+}
+
+.flix-slider-tile-menu-li > a.img-toggle:hover {
+    color: orange !important;
+}
+
+.flix-slider-tile-menu-li > a.img-del:hover {
+    color: red !important;
+}
+
+.flix-slider-tile-menu-li > a > * {
+    margin: auto;
+}
+
+.flix-slider-tile-menu-li > a:hover {
+    color: #fff;
+}
+
+a.active-img {
+    color: orange !important;
+}
+
+/*
+----------------------------
+                   Accordion
+----------------------------
+*/
+
+.acc-card {
+    border-radius: 0 !important;
+    border: none;
+}
+
+.acc-header {
+    background-color: #e6e6e6 !important;
+    border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    line-height: 60px;
+    justify-content: space-between;
+}
+
+.acc-btn {
+    min-width: 200px !important;
+}
+
+.acc-body {
+    padding: 15px !important;
+    overflow: scroll;
+}
